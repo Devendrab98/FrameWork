@@ -29,12 +29,12 @@ public class BaseClass {
     String Browser = readConfig.getBrowser();
 
     public static WebDriver driver;
-
     public static Logger logger;
 
     @BeforeClass
     public void steup() {
 
+        // launch Browser
         switch (Browser.toLowerCase()) {
 
             case "chrome":
@@ -53,12 +53,10 @@ public class BaseClass {
 
     }
 
-    @AfterClass
-    public void teardown() {
-        driver.close();
-        driver.quit();
+        @AfterClass
+        public void teardown() {
+            driver.quit();
 
-    }
-
+        }
 
 }

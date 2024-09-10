@@ -22,7 +22,7 @@ public class MyAccount {
     @FindBy(name = "name")
     WebElement Name;
 
-    @FindBy(name = "email")
+    @FindBy(xpath = "//input[@data-qa='signup-email']")
     WebElement EnterEamil;
 
     @FindBy(xpath = "//button[@data-qa='signup-button']")
