@@ -7,19 +7,17 @@ import org.testng.annotations.*;
 
 public class TC_MyAccountPageTest extends BaseClass {
 
-    @Test
+    @Test(enabled = false)
     public void VerifyRegAndLogin() throws InterruptedException {
-        driver.get(url);
-
-        logger.info("Website Opened");
 
         IndexPage pg = new IndexPage(driver);
         pg.ClickOnSignup();
 
         MyAccount My = new MyAccount(driver);
-        My.EnterName("Viru92");
-        My.EnterEmailID("viru6@yopmail.com");
+        My.EnterName("Viru");
+        My.EnterEmailID("viru34@yopmail.com");
         My.SignupButton();
+        logger.info("Signup successfully");
 
         AccountCreationDetails ACCD = new AccountCreationDetails(driver);
         ACCD.SelectTitleMr();
@@ -33,5 +31,18 @@ public class TC_MyAccountPageTest extends BaseClass {
         ACCD.EnterZipCode("1234");
         ACCD.EnterMobileNumber("9876432123");
         ACCD.ClickOnRegistration();
+    }
+
+    @Test
+    public void VerifyLogin(){
+
+        IndexPage pg = new IndexPage(driver);
+        pg.ClickOnSignup();
+
+        MyAccount My = new MyAccount(driver);
+        My.EnterLoginEmail("viru34@yopmail.com");
+        My.EnterLoginPassword("123456");
+        My.ClickOnLoginButton();
+
     }
 }

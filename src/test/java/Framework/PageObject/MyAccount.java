@@ -28,6 +28,18 @@ public class MyAccount {
     @FindBy(xpath = "//button[@data-qa='signup-button']")
     WebElement sinupBtn;
 
+
+    // Identify Element For login
+    @FindBy(name = "email")
+    WebElement EmailID;
+
+    @FindBy(name = "password")
+    WebElement loginPass;
+
+    @FindBy(xpath = "//button[text()='Login']")
+    WebElement loginbtn;
+
+    // SignUp Action
     public void EnterName(String UName) {
         Name.sendKeys(UName);
     }
@@ -38,6 +50,19 @@ public class MyAccount {
 
     public void SignupButton() {
         sinupBtn.click();
+    }
+
+
+   // Login Action
+    public void EnterLoginEmail(String LgEmailId) {
+        EmailID.sendKeys(LgEmailId);
+    }
+
+     public void EnterLoginPassword(String LgPass) {
+         loginPass.sendKeys(LgPass);
+    }
+     public void ClickOnLoginButton() {
+         loginbtn.click();
     }
 
 }

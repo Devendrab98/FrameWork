@@ -45,11 +45,16 @@ public class BaseClass {
                 driver = new FirefoxDriver();
                 break;
         }
+
         // implicitly wait for 10 sec
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         // for logging
         logger = LogManager.getLogger("FrameworkDemo");
+
+        // Open URL
+        driver.get(url); 
+        logger.info("Website Opened");
 
     }
 
