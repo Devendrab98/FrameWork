@@ -64,5 +64,4 @@ public class MyAccount {
      public void ClickOnLoginButton() {
          loginbtn.click();
     }
-
 }

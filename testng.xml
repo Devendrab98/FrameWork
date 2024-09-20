@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="Framework.Utilitize.ExtendListenerClass"/>
+    </listeners>
     <test verbose="2" preserve-order="true"
-          name="C:/Users/VIPER PC/IdeaProjects/FrameworkDemo/src/test/java/Framework/TestCases/TC_MyAccountPageTest.java">
+          name="C:/Users/VIPER PC/IdeaProjects/FrameworkDemo">
         <classes>
             <class name="Framework.TestCases.TC_MyAccountPageTest">
             </class>

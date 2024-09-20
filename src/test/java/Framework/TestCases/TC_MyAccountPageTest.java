@@ -3,7 +3,11 @@ package Framework.TestCases;
 import Framework.PageObject.AccountCreationDetails;
 import Framework.PageObject.IndexPage;
 import Framework.PageObject.MyAccount;
+import Framework.PageObject.RegisterUserAccount;
+import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.io.IOException;
 
 public class TC_MyAccountPageTest extends BaseClass {
 
@@ -31,10 +35,13 @@ public class TC_MyAccountPageTest extends BaseClass {
         ACCD.EnterZipCode("1234");
         ACCD.EnterMobileNumber("9876432123");
         ACCD.ClickOnRegistration();
+
+        logger.info("Registration successfully");
+
     }
 
     @Test
-    public void VerifyLogin(){
+    public void VerifyLogin() throws IOException {
 
         IndexPage pg = new IndexPage(driver);
         pg.ClickOnSignup();
@@ -43,6 +50,18 @@ public class TC_MyAccountPageTest extends BaseClass {
         My.EnterLoginEmail("viru34@yopmail.com");
         My.EnterLoginPassword("123456");
         My.ClickOnLoginButton();
+        logger.info("Log in successfully");
 
+        RegisterUserAccount rgUser = new RegisterUserAccount(driver);
+        String LoginUser = rgUser.verifyname();
+
+        if (LoginUser.equals("Viru")) {
+            logger.info("User name is correct");
+            Assert.assertTrue(true);
+        } else {
+            logger.info("User name is Incorrect");
+            CaptureScreenShot(driver, "VerifyLogin");
+            Assert.assertTrue(false);
+        }
     }
 }
