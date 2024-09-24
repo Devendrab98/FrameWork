@@ -19,10 +19,16 @@ public class RegisterUserAccount {
     @FindBy(xpath = "//b[text()='Viru']")
     WebElement LoginUser;
 
+   @FindBy(xpath ="//a[text()=' Logout']")
+   WebElement SignOut;
+
     public String verifyname(){
 
         String text= LoginUser.getText();
 
         return text;
+    }
+    public void logout(){
+        SignOut.click();
     }
 }

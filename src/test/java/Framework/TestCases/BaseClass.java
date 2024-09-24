@@ -79,7 +79,7 @@ public class BaseClass {
 
         File des= new File(System.getProperty("user.dir") + "//Screenshots//" + testName + ".png");
 
-        // step copy image fiel destination
+        // step copy image file destination
         FileUtils.copyFile(src ,des);
 
         logger.info("ScreenShot Taken Successfully!");

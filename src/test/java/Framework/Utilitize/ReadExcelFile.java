@@ -1,14 +1,12 @@
 package Framework.Utilitize;
 
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 
 public class ReadExcelFile {
 
@@ -18,17 +16,20 @@ public class ReadExcelFile {
     public static XSSFRow row;
     public static XSSFCell cell;
 
-    public static String getCellValue(String fileName, String sheetName, int rowNo, int cellNo){
+    public static String getCellValue(String fileName, String sheetName, int rowNo, int cellNo, DataFormatter dataFormatter){
 
+        String cellValue = "";
         try {
             fis = new FileInputStream(fileName);
             workbook= new XSSFWorkbook(fis);
             sheet = workbook.getSheet(sheetName);
             cell = workbook.getSheet(sheetName).getRow(rowNo).getCell(cellNo);
 
+            cellValue= dataFormatter.formatCellValue(cell);
             workbook.close();
 
-            return cell.getStringCellValue();
+//            return cell.getStringCellValue();
+            return cellValue;
         } catch (Exception e) {
             return "";
         }
@@ -64,7 +65,4 @@ public class ReadExcelFile {
             return (0);
         }
     }
-
-
-
 }
