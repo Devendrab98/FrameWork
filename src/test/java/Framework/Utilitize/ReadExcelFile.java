@@ -16,16 +16,16 @@ public class ReadExcelFile {
     public static XSSFRow row;
     public static XSSFCell cell;
 
-    public static String getCellValue(String fileName, String sheetName, int rowNo, int cellNo, DataFormatter dataFormatter){
+    public static String getCellValue(String fileName, String sheetName, int rowNo, int cellNo, DataFormatter dataFormatter) {
 
         String cellValue = "";
         try {
             fis = new FileInputStream(fileName);
-            workbook= new XSSFWorkbook(fis);
+            workbook = new XSSFWorkbook(fis);
             sheet = workbook.getSheet(sheetName);
             cell = workbook.getSheet(sheetName).getRow(rowNo).getCell(cellNo);
 
-            cellValue= dataFormatter.formatCellValue(cell);
+            cellValue = dataFormatter.formatCellValue(cell);
             workbook.close();
 
 //            return cell.getStringCellValue();
@@ -35,14 +35,14 @@ public class ReadExcelFile {
         }
     }
 
-    public static int getRowCount(String fileName,String sheetName){
+    public static int getRowCount(String fileName, String sheetName) {
 
         try {
             fis = new FileInputStream(fileName);
             workbook = new XSSFWorkbook(fis);
             sheet = workbook.getSheet(sheetName);
 
-            int totalRow= sheet.getLastRowNum() +1;
+            int totalRow = sheet.getLastRowNum() + 1;
             workbook.close();
             return totalRow;
 
@@ -50,14 +50,15 @@ public class ReadExcelFile {
             return (0);
         }
     }
-    public static int getColCount(String fileName,String sheetName){
+
+    public static int getColCount(String fileName, String sheetName) {
 
         try {
             fis = new FileInputStream(fileName);
             workbook = new XSSFWorkbook(fis);
             sheet = workbook.getSheet(sheetName);
 
-            int totalCell= sheet.getRow(0).getLastCellNum();
+            int totalCell = sheet.getRow(0).getLastCellNum();
             workbook.close();
             return totalCell;
 
