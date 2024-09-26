@@ -15,7 +15,7 @@ public class RegisterUserAccount {
         PageFactory.initElements(rdriver, this);
     }
 
-    // Identify login username element
+    // Identify login user name element
     @FindBy(xpath = "//b[text()='Viru']")
     WebElement LoginUser;
 

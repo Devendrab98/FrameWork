@@ -55,7 +55,7 @@ public class BaseClass {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         // for logging
-        logger = LogManager.getLogger("FrameworkDemo");
+        logger= LogManager.getLogger("FrameworkDemo");
 
         // Open URL
         driver.get(url);

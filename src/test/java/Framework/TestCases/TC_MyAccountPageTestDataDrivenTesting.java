@@ -48,12 +48,16 @@ public class TC_MyAccountPageTestDataDrivenTesting extends BaseClass {
 
         IndexPage pg = new IndexPage(driver);
         pg.ClickOnSignup();
+        logger.info("Successfully click on the sing up link");
 
         MyAccount My = new MyAccount(driver);
         My.EnterLoginEmail(userEml);
+        logger.info("Enter Email successfully");
         My.EnterLoginPassword(passWrd);
+        logger.info("Enter Password successfully");
         My.ClickOnLoginButton();
-        logger.info("Log in successfully");
+        logger.info("Button clicked successfully");
+        logger.info("Log in Successfully");
 
         RegisterUserAccount rgUser = new RegisterUserAccount(driver);
         String LoginUser = rgUser.verifyname();
@@ -61,6 +65,9 @@ public class TC_MyAccountPageTestDataDrivenTesting extends BaseClass {
         if (LoginUser.equals(ExpUserName)) {
             logger.info("User name is correct");
             Assert.assertTrue(true);
+//            System.out.println("Log file path: " + System.getProperty("user.dir") + "/logs/mylog.log");
+//            logger.debug("This is a debug message");
+//            logger.info("This is an info message");
             rgUser.logout();
         } else {
             logger.info("User name is Incorrect");
@@ -92,7 +99,8 @@ public class TC_MyAccountPageTestDataDrivenTesting extends BaseClass {
                 data[i -1][j] = ReadExcelFile.getCellValue(fileName, "Sheet1", i,j, dataFormatter );
                 System.out.println( data[i -1][j]);
             }
-        }
+        } logger.info("Data is successfully fetch from Excel file");
         return data;
+
     }
 }
