@@ -3,7 +3,7 @@ package Framework.TestCases;
 import Framework.PageObject.AccountCreationDetails;
 import Framework.PageObject.IndexPage;
 import Framework.PageObject.MyAccount;
-import Framework.PageObject.RegisterUserAccount;
+import Framework.PageObject.RegisterUserAccount_HomePage;
 import Framework.Utilitize.ReadExcelFile;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.testng.Assert;
@@ -59,7 +59,7 @@ public class TC_MyAccountPageTestDataDrivenTesting extends BaseClass {
         logger.info("Button clicked successfully");
         logger.info("Log in Successfully");
 
-        RegisterUserAccount rgUser = new RegisterUserAccount(driver);
+        RegisterUserAccount_HomePage rgUser = new RegisterUserAccount_HomePage(driver);
         String LoginUser = rgUser.verifyname();
 
         if (LoginUser.equals(ExpUserName)) {

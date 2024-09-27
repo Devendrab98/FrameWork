@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RegisterUserAccount {
+public class RegisterUserAccount_HomePage {
 
     WebDriver ldriver;
 
-   public RegisterUserAccount(WebDriver rdriver){
+   public RegisterUserAccount_HomePage(WebDriver rdriver){
         ldriver= rdriver;
 
         PageFactory.initElements(rdriver, this);
@@ -22,6 +22,16 @@ public class RegisterUserAccount {
    @FindBy(xpath ="//a[text()=' Logout']")
    WebElement SignOut;
 
+   @FindBy(xpath = "//a[text()=' Products']")
+   WebElement ProductPageLink;
+
+   @FindBy(id = "search_product")
+   WebElement SearchBox;
+
+   @FindBy(id = "submit_search")
+   WebElement SearchBtn;
+
+
     public String verifyname(){
 
         String text= LoginUser.getText();
@@ -31,5 +41,18 @@ public class RegisterUserAccount {
     public void logout(){
         SignOut.click();
     }
+
+    public void ClickOnProductLink(){
+        ProductPageLink.click();
+    }
+
+    public void SearchBar(String search){
+        SearchBox.sendKeys(search);
+    }
+
+    public void ClickOnSearchButton(){
+        SearchBtn.click();
+    }
+
 }
 

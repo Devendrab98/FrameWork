@@ -7,7 +7,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/VIPER PC/IdeaProjects/FrameworkDemo">
         <classes>
-            <class name="Framework.TestCases.TC_MyAccountPageTestDataDrivenTesting">
+            <class name="Framework.TestCases.ProductPageTest">
             </class>
         </classes>
     </test>

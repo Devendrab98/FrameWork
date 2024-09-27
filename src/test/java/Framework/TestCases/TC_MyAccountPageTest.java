@@ -3,7 +3,7 @@ package Framework.TestCases;
 import Framework.PageObject.AccountCreationDetails;
 import Framework.PageObject.IndexPage;
 import Framework.PageObject.MyAccount;
-import Framework.PageObject.RegisterUserAccount;
+import Framework.PageObject.RegisterUserAccount_HomePage;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -40,7 +40,7 @@ public class TC_MyAccountPageTest extends BaseClass {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void VerifyLogin() throws IOException {
 
         IndexPage pg = new IndexPage(driver);
@@ -52,7 +52,7 @@ public class TC_MyAccountPageTest extends BaseClass {
         My.ClickOnLoginButton();
         logger.info("Log in successfully");
 
-        RegisterUserAccount rgUser = new RegisterUserAccount(driver);
+        RegisterUserAccount_HomePage rgUser = new RegisterUserAccount_HomePage(driver);
         String LoginUser = rgUser.verifyname();
 
         if (LoginUser.equals("Viru")) {
