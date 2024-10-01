@@ -39,6 +39,7 @@ public class MyAccount {
     @FindBy(xpath = "//button[text()='Login']")
     WebElement loginbtn;
 
+
     // SignUp Action
     public void EnterName(String UName) {
         Name.sendKeys(UName);
