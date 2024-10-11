@@ -10,62 +10,61 @@ public class SearchResultPage {
 
     WebDriver ldriver;
 
-    public SearchResultPage(WebDriver rdriver){
-        ldriver= rdriver;
+    public SearchResultPage(WebDriver rdriver) {
+        ldriver = rdriver;
 
         PageFactory.initElements(rdriver, this);
     }
 
-//    @FindBy(xpath = "//p[text()='GRAPHIC DESIGN MEN T SHIRT - BLUE']")
-//    WebElement SearchResult;
+    // WebElement SearchResult;
     @FindBy(xpath = "//div[@class='features_items']")
     WebElement SearchResult;
 
     // View Product Element
-    @FindBy(xpath = "//a[text()='View Product']" )
+    @FindBy(xpath = "//ul[@class='nav nav-pills nav-justified']//a[@href='/product_details/33']")  //a[text()='View Product']
     WebElement ViewProductBtn;
 
-    // Change Quantity Element
-    @FindBy(id = "quantity")
-    WebElement ChangeQuantity;
+//    // Change Quantity Element
+//    @FindBy(id = "quantity")
+//    WebElement ChangeQuantity;
+//
+//    // Click on Add TO Cart Button Element
+//    @FindBy(xpath = "//button[normalize-space()='Add to cart']")
+//    WebElement AddTOCartBtn;
+//
+//    // Confirmation Pop-up Element
+//    @FindBy(xpath = "//button[text()='Continue Shopping']")
+//    WebElement ConfirmationPop_up;
+//
+//    // Click on Cart option Element
+//    @FindBy(xpath = "//a[text()=' Cart']")
+//    WebElement CartOption;
 
-    // Click on Add TO Cart Button Element
-    @FindBy(xpath = "//button[normalize-space()='Add to cart']")
-    WebElement AddTOCartBtn;
 
-    // Confirmation Pop-up Element
-    @FindBy(xpath = "//button[text()='Continue Shopping']")
-    WebElement ConfirmationPop_up;
-
-    // Click on Cart option Element
-    @FindBy(xpath = "//a[text()=' Cart']")
-    WebElement CartOption;
-
-
-    public String SearchResultProductName(){
-        return  (SearchResult.getText());
+    public String SearchResultProductName() {
+        return (SearchResult.getText());
     }
 
-    public void ClickOnViewProduct(){
+    public void ClickOnViewProduct() {
         ViewProductBtn.click();
     }
 
 
-    public void ClickOnQuantity(){
-        ChangeQuantity.click();
-        ChangeQuantity.sendKeys(Keys.BACK_SPACE);
-        ChangeQuantity.sendKeys("2");
-    }
-
-    public void ClickOnAddToCartButton(){
-        AddTOCartBtn.click();
-    }
-
-    public void ClickOnPop_up(){
-        ConfirmationPop_up.click();
-    }
-
-    public void ClickOnCartLink(){
-        CartOption.click();
-    }
+//    public void ClickOnQuantity(){
+//        ChangeQuantity.click();
+//        ChangeQuantity.sendKeys(Keys.BACK_SPACE);
+//        ChangeQuantity.sendKeys("2");
+//    }
+//
+//    public void ClickOnAddToCartButton(){
+//        AddTOCartBtn.click();
+//    }
+//
+//    public void ClickOnPop_up(){
+//        ConfirmationPop_up.click();
+//    }
+//
+//    public void ClickOnCartLink(){
+//        CartOption.click();
+//    }
 }
