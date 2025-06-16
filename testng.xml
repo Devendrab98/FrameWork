@@ -4,8 +4,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/deven/IdeaProjects/FrameWork/src/test/java/Framework/TestCases/ProductPageTest.java">
         <classes>
-            <class name="Framework.TestCases.ProductPageTest">
-            </class>
+            <class name="Framework.TestCases.ProductPageTest"/>
         </classes>
     </test>
 </suite>
