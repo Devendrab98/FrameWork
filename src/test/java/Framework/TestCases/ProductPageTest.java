@@ -34,12 +34,10 @@ public class ProductPageTest extends BaseClass {
         String searchRslt = result.SearchResultProductName();
 //        System.out.println("Product Name:"+ searchRslt);
 
-        if (searchRslt.toLowerCase().contains(keyword))
-        {
+        if (searchRslt.toLowerCase().contains(keyword)) {
             System.out.println("Product search test case is pass");
             Assert.assertTrue(true);
-        }
-        else {
+        } else {
             System.out.println("Product search test case is fail");
             Assert.assertTrue(false);
 

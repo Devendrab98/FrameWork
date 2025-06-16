@@ -9,7 +9,8 @@ public class ReadConfig {
 
     Properties properties;
 
-    String Path = "C:\\Users\\VIPER PC\\IdeaProjects\\FrameworkDemo\\Configuration\\config.properties";
+    String Path = "C:\\Users\\deven\\IdeaProjects\\FrameWork\\Configuration\\config.properties";
+
 
     public ReadConfig() throws IOException {
 

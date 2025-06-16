@@ -10,7 +10,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.*;
 
 import java.io.File;
@@ -55,7 +54,7 @@ public class BaseClass {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         // for logging
-        logger= LogManager.getLogger("FrameworkDemo");
+        logger= LogManager.getLogger("Framework");
 
         // Open URL
         driver.get(url);
